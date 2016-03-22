@@ -6,4 +6,4 @@ console.log('Running...');
 http.createServer(function(req, res) {    
     res.writeHead(200, { 'Content-Type' : 'text/plain' });
     res.end("Hello world!\n");
-}).listen(1337, "13.79.153.107");
+}).listen(1337);
