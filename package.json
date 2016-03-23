@@ -1,0 +1,23 @@
+{
+  "name": "everythingpast",
+  "version": "0.0.2",
+  "description": "Everything Past, now with database",
+  "main": "app.js",
+  "dependencies": {
+    "mongo": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1linx/EvPast.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1linx/EvPast/issues"
+  },
+  "homepage": "https://github.com/1linx/EvPast#readme"
+}
