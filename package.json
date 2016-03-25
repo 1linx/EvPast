@@ -4,7 +4,10 @@
   "description": "Everything Past, now with database",
   "main": "app.js",
   "dependencies": {
-    "mongo": "^0.1.0"
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.10"
   },
   "devDependencies": {},
   "scripts": {
