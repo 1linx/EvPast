@@ -6,8 +6,8 @@ var Schema = mongoose.Schema;
 
 var institutionProfileSchema = new Schema({
     dates : {
-        dateTo : String,
-        dateFrom : String 
+        dateTo : Date,
+        dateFrom : Date 
     },
     coordinates : {
         latitude : Number,
@@ -33,7 +33,6 @@ var institutionProfileSchema = new Schema({
 
 // institutionProfileSchema.prototype = { Dates : dates };
 
-var InstitutionProfile = mongoose.model('InstitutionProfile', institutionProfileSchema);
+var InstitutionProfiles = mongoose.model('InstitutionProfiles', institutionProfileSchema);
 
-
-module.exports = InstitutionProfile;
+module.exports = InstitutionProfiles;

@@ -1,5 +1,4 @@
 var Artefacts = require('../models/artefactModel');
-var Coordinates = require('../models/coordinatesModel');
 var InstitutionProfile = require('../models/institutionProfileModel');
 var bodyParser = require('body-parser');
 
@@ -8,9 +7,10 @@ module.exports = function(app) {
     app.use(bodyParser.urlencoded({ extended: true }));
     
     app.get('/', function(req, res) { 
-            console.log(InstitutionProfile.dates);
-                          
-            res.send("Afternoon, chief.");        
+            Artefacts.find(function(err, artefacts) {
+                if (err) throw err;
+                res.json(artefacts);
+            });        
     });
     
     app.get('/api/artefacts/:username', function(req, res) {

@@ -27,8 +27,5 @@ console.log(jsonDate);
 
 var institutionProfile = require('./models/institutionProfileModel');
 
-console.log(typeof institutionProfile.hello);
-
-
 
 app.listen(port);
