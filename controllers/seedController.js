@@ -2,6 +2,7 @@ var Artefacts = require('../models/artefactModel');
 var InstitutionProfile = require('../models/institutionProfileModel');
 var LocationProfile = require('../models/locationProfileModel');
 var PersonProfile = require('../models/personProfileModel');
+var async = require('async');
 
 var allResults = {};
 
@@ -25,7 +26,7 @@ module.exports = function(app) {
            {
                 title : "More dummy artefacts",
                 creator : "T. E. Ster",
-                subject : "The fast testing of silent things",
+                subject : "The fast testing of testable things",
                 description : "Prolonged sentence about the testing of things that are being tested, by me, the tester."   ,
                 hello : "Hi there, I'm breaking the schema!"           
            }
@@ -129,5 +130,24 @@ module.exports = function(app) {
        });
         
     });
+  
+  
+  // make async series instead of that mess above ^^
+//   async.series([
+//     function(callback){
+//         // do some stuff ...
+//         callback(null, 'one');
+//     },
+//     function(callback){
+//         // do some more stuff ...
+//         callback(null, 'two');
+//     }
+// ],
+// // optional callback
+// function(err, results){
+//     // results is now equal to ['one', 'two']
+// });
+  
+  
        
-}
+};

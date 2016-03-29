@@ -5,12 +5,16 @@ var bodyParser = require('body-parser');
 module.exports = function(app) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-    
-    app.get('/', function(req, res) { 
+        
+    app.get('/artefact', function(req, res) { 
             Artefacts.find(function(err, artefacts) {
                 if (err) throw err;
-                res.json(artefacts);
+                res.render('artefact', { serverArtefacts : artefacts });
             });        
+    });
+    
+    app.get('/', function(req, res) { 
+                res.render("index");
     });
     
     app.get('/api/artefacts/:username', function(req, res) {
@@ -59,4 +63,4 @@ module.exports = function(app) {
             res.send('Success!');
         });
     });
-}
+};
