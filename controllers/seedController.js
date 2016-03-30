@@ -9,7 +9,7 @@ var allResults = {};
 module.exports = function(app) {
     app.get('/api/setup', function(req, res) {
        
-       //seed databse
+       //seed database
        var seedArtefacts = [
            {
                 title : "A dummy artefact",
@@ -90,64 +90,72 @@ module.exports = function(app) {
             }
        };
        
-       Artefacts.remove({}, function(err){
-           if (err) throw err;
-           
+    
+  // async call to clear and reseed the database.
+    async.series([
+        function(callback){        
+        Artefacts.remove({}, function(err){
+            if (err) throw err;
+        });
+        callback(null, 'Artefacts collection cleared');
+        },
+        function(callback){
             Artefacts.create(seedArtefacts, function(err, results) {
-                    if (err) throw err;               
-                    allResults["artefacts"] = results; 
-                    
-                    InstitutionProfile.remove({}, function(err){
-                        if (err) throw err;
-                        
-                        InstitutionProfile.create(seedInstitutionProfile, function(err, results) {
-                                if (err) throw err;               
-                                allResults["institutionProfile"] = results;  
-                                
-                                    LocationProfile.remove({}, function(err, results) {
-                                        if (err) throw err; 
-                                        
-                                        LocationProfile.create(seedLocationProfile, function(err, results) {
-                                            if (err) throw err; 
-                                            allResults["locationProfile"] = results;  
-                                        
-                                            PersonProfile.remove({}, function(err, results) {
-                                                if (err) throw err; 
-                                                
-                                                PersonProfile.create(seedPersonProfile, function(err, results) {
-                                                    if (err) throw err; 
-                                                    allResults["PersonProfile"] = results;  
-                                            
-                                                    res.send("All cleared up. Reseeding data:" + allResults.artefacts + allResults.institutionProfile + allResults.locationProfile + allResults.PersonProfile )             
-                                                });  
-                                            });
-                                        });
-                                        
-                                    });                             
-                        });
-                    });           
+                if (err) throw err;               
+                allResults["artefacts"] = results; 
             });
-       });
-        
+            callback(null, 'Artefacts collection reseeded');
+        },
+        function(callback){
+            InstitutionProfile.remove({}, function(err){
+                if (err) throw err;
+            });
+            callback(null, 'Institution collection cleared');
+        },
+        function(callback){
+            InstitutionProfile.create(seedInstitutionProfile, function(err, results) {
+                if (err) throw err;               
+                allResults["institutionProfile"] = results;  
+            });
+            callback(null, 'Institution collection reseeded');
+        },
+        function(callback){
+            LocationProfile.remove({}, function(err, results) {
+                if (err) throw err;
+            });
+            callback(null, 'Location collection cleared');
+        },
+        function(callback){
+            LocationProfile.create(seedLocationProfile, function(err, results) {
+                if (err) throw err; 
+                allResults["locationProfile"] = results;  
+            });
+            callback(null, 'Location collection reseeded');
+        },
+        function(callback){
+            PersonProfile.remove({}, function(err, results) {
+                if (err) throw err; 
+            });
+            callback(null, 'Person collection cleared');
+        },
+        function(callback){
+            PersonProfile.create(seedPersonProfile, function(err, results) {
+                if (err) throw err; 
+                allResults["PersonProfile"] = results;  
+            });
+            callback(null, 'Person collection cleared');
+        },
+        function(callback){
+            res.send("All cleared up. Reseeding data:" + allResults.artefacts + allResults.institutionProfile + allResults.locationProfile + allResults.PersonProfile );   
+            callback(null, 'All done');
+        }   
+     
+    ],
+    // optional callback
+    function(err, results){
+        for (var item in results) {
+        console.log(results);
+        }
     });
-  
-  
-  // make async series instead of that mess above ^^
-//   async.series([
-//     function(callback){
-//         // do some stuff ...
-//         callback(null, 'one');
-//     },
-//     function(callback){
-//         // do some more stuff ...
-//         callback(null, 'two');
-//     }
-// ],
-// // optional callback
-// function(err, results){
-//     // results is now equal to ['one', 'two']
-// });
-  
-  
-       
+});
 };
