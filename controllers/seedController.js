@@ -1,8 +1,9 @@
+var async = require('async');
+
 var Artefacts = require('../models/artefactModel');
 var InstitutionProfile = require('../models/institutionProfileModel');
 var LocationProfile = require('../models/locationProfileModel');
 var PersonProfile = require('../models/personProfileModel');
-var async = require('async');
 
 var allResults = {};
 
@@ -102,7 +103,7 @@ module.exports = function(app) {
         function(callback){
             Artefacts.create(seedArtefacts, function(err, results) {
                 if (err) throw err;               
-                allResults["artefacts"] = results; 
+                allResults.artefacts = results; 
             });
             callback(null, 'Artefacts collection reseeded');
         },
@@ -115,7 +116,7 @@ module.exports = function(app) {
         function(callback){
             InstitutionProfile.create(seedInstitutionProfile, function(err, results) {
                 if (err) throw err;               
-                allResults["institutionProfile"] = results;  
+                allResults.institutionProfile = results;  
             });
             callback(null, 'Institution collection reseeded');
         },
@@ -128,7 +129,7 @@ module.exports = function(app) {
         function(callback){
             LocationProfile.create(seedLocationProfile, function(err, results) {
                 if (err) throw err; 
-                allResults["locationProfile"] = results;  
+                allResults.locationProfile = results;  
             });
             callback(null, 'Location collection reseeded');
         },
@@ -141,12 +142,15 @@ module.exports = function(app) {
         function(callback){
             PersonProfile.create(seedPersonProfile, function(err, results) {
                 if (err) throw err; 
-                allResults["PersonProfile"] = results;  
+                allResults.PersonProfile = results;  
             });
             callback(null, 'Person collection cleared');
         },
+        // this could be better handled array parse by client-side
         function(callback){
-            res.send("All cleared up. Reseeding data:" + allResults.artefacts + allResults.institutionProfile + allResults.locationProfile + allResults.PersonProfile );   
+            setTimeout(function() { 
+                res.send("All cleared up now. Reseeding data:" + allResults.artefacts + allResults.institutionProfile + allResults.locationProfile + allResults.PersonProfile );   
+            }, 3000);            
             callback(null, 'All done');
         }   
      
