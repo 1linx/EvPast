@@ -20,6 +20,8 @@ seedController(app);
 apiController(app);
 
 console.log("Running...");
+console.log(process.env.PORT);
+
 
 var institutionProfile = require('./models/institutionProfileModel');
 
