@@ -9,18 +9,18 @@ var personProfileSchema = new Schema({
     maidenName : String,
     birth : {
         date : Date,
-        instution : String
+        institution : String
     },
     death : {
         date : Date,
-        instution : String
+        institution : String
     },
     employment : {
         dates : {
             dateFrom: Date,
             dateTo : Date
         },
-        instution : String,
+        institution : String,
         position : String
     },
     education : {
@@ -28,7 +28,7 @@ var personProfileSchema = new Schema({
             dateFrom: Date,
             dateTo : Date
         },
-        instution : String,
+        institution : String,
         qualifications : String
     },
     address : {

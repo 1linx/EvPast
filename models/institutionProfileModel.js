@@ -31,7 +31,6 @@ var institutionProfileSchema = new Schema({
 
 });
 
-// institutionProfileSchema.prototype = { Dates : dates };
 
 var InstitutionProfiles = mongoose.model('InstitutionProfiles', institutionProfileSchema);
 

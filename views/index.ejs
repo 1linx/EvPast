@@ -1,11 +1,19 @@
 <html ng-app="TestApp">
 	<head>
-		<title>Everything Past</title>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+       <title>Everything Past</title>
+        
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 	</head>
 	<body>
+        <div class="jumbotron">
         <h1>Everything Past</h1>
-        <p><a href="/artefact">Artefacts</a></p>
+        <a href="/artefacts" class="btn btn-primary btn-lg">Artefacts</a>
+        <a href="/institutions" class="btn btn-primary btn-lg">Institutions</a>
+        <a href="/locations" class="btn btn-primary btn-lg">Locations</a>
+        <a href="/persons" class="btn btn-primary btn-lg">Persons</a>
+        </div>
 	</body>
     <script src="/assets/js/app.js"></script>
 </html>

@@ -83,11 +83,11 @@ module.exports = function(app) {
             surnames : "Pabodie",
             birth : {
                 date : new Date("April 20, 1947"),
-                instution : "Our lady in labour"
+                institution : "Our lady in labour"
             },
             death : {
                 date : new Date("February 14, 1967"),
-                instution : "St Mungo's"
+                institution : "St Mungo's"
             }
        };
        

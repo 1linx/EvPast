@@ -1,0 +1,45 @@
+<html ng-app="EvPast">
+	<head>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+       <title>Artefacts</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	</head>
+	<body ng-controller="MainController as vm">
+        <h4 class="col-md-4 col-md-offset-4">Create Artefact</h4>
+        
+        <form method="POST" action="/artefacts" class="col-md-4 col-md-offset-4">
+            <div class="form-group">
+                <label for="titleInput">Title</label>
+                <input type="text" class="form-control" id="titleInput" placeholder="" name="title">
+            </div>
+            <div class="form-group">
+                <label for="creatorInput">Creator</label>
+                <input type="text" class="form-control" id="creatorInput" placeholder="" name="creator">
+            </div>
+            <div class="form-group">
+                <label for="subjectInput">Subject</label>
+                <input type="text" class="form-control" id="subjectInput" placeholder="" name="subject">
+            </div>
+            <div class="form-group">
+                <label for="descriptionInput">Description</label>
+                <input type="text" class="form-control" id="descriptionInput" placeholder="" name="description">
+            </div>
+            <div class="form-group">
+                <label for="publisherInput">Publisher</label>
+                <input type="text" class="form-control" id="publisherInput" placeholder="" name="publisher">
+            </div>
+            <div class="form-group">
+                <label for="contributorInput">Contributor</label>
+                <input type="text" class="form-control" id="contributorInput" placeholder="" name="contributor">
+            </div>
+            <div class="form-group">
+                <label for="dateInput">Date</label>
+                <input type="date" class="form-control" id="dateInput" placeholder="" name="date">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    
+	</body>
+    <script src="/assets/js/app.js"></script>
+</html>

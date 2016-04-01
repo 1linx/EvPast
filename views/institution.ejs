@@ -1,0 +1,44 @@
+<html ng-app="EvPast">
+	<head>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+       <title>Institution</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	</head>
+	<body ng-controller="MainController as vm">
+        <table class="table">
+            <tr>
+                <th>dates.dateTo</th>
+                <th>dates.dateFrom</th>
+                <th>coordinates.latitude</th>
+                <th>coordinates.longitude</th>
+                <th>coordinates.addressNumber</th>
+                <th>coordinates.addressStreetName</th>
+                <th>coordinates.addressCity</th>
+                <th>coordinates.addressCounty</th>
+                <th>coordinates.addressPostcode</th>
+                <th>keyWords.keyWord</th>
+                <th>webSites.webSite</th>
+                <th>artefacts.artefact</th>
+            </tr>
+            <tr ng-repeat="content in vm.content">                
+                <td>{{ content.dates.dateTo }}</td>
+                <td>{{ content.dates.dateFrom }}</td>
+                <td>{{ content.coordinates.latitude }}</td>
+                <td>{{ content.coordinates.longitude }}</td>
+                <td>{{ content.coordinates.addressNumber }}</td>
+                <td>{{ content.coordinates.addressStreetName }}</td>
+                <td>{{ content.coordinates.addressCity }}</td>
+                <td>{{ content.coordinates.addressCounty }}</td>
+                <td>{{ content.coordinates.addressPostcode }}</td>
+                <td>{{ content.keyWords.keyWord }}</td>
+                <td>{{ content.webSites.webSite }}</td>
+                <td>{{ content.artefacts.artefact }}</td>
+            </tr>
+        </table>
+	</body>
+    <script>
+        var clientContent = <%- JSON.stringify(serverContent) %>;
+    </script>
+    <script src="/assets/js/app.js"></script>
+</html>

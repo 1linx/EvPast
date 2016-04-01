@@ -1,18 +1,19 @@
 <html ng-app="EvPast">
 	<head>
-		<title>Artefacts</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+       <title>Artefacts</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 	</head>
 	<body ng-controller="MainController as vm">
-        <table>
+        <table class="table">
             <tr>
                 <th>title</th>
                 <th>creator</th>
                 <th>subject</th>
                 <th>description</th>
             </tr>
-            <tr ng-repeat="content in vm.artefacts">
+            <tr ng-repeat="content in vm.content">
                 <td>{{ content.title }}</td>
                 <td>{{ content.creator }}</td>
                 <td>{{ content.subject }}</td>
@@ -21,7 +22,7 @@
         </table>
 	</body>
     <script>
-        var clientArtefacts = <%- JSON.stringify(serverArtefacts) %>;
+        var clientContent = <%- JSON.stringify(serverContent) %>;
     </script>
     <script src="/assets/js/app.js"></script>
 </html>

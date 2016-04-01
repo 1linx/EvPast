@@ -20,9 +20,7 @@ mongoose.connect('mongodb://localhost:27017/' + database);
 seedController(app);
 apiController(app);
 
-var now = new Date();
-var jsonDate = now.toJSON();
-console.log(jsonDate);
+console.log("Running...");
 
 var institutionProfile = require('./models/institutionProfileModel');
 

@@ -1,0 +1,70 @@
+<html ng-app="EvPast">
+	<head>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+       	<title>Persons</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	</head>
+	<body ng-controller="MainController as vm">
+        <table class="table">
+            <tr>
+                <th>firstName</th>
+                <th>middleNames</th>
+                <th>surnames</th>
+                <th>maidenName</th>
+                <th>birth.date</th>
+                <th>birth.institution</th>
+                <th>death.date</th>
+                <th>death.institution</th>
+                <th>employment.dates.dateFrom</th>
+                <th>employment.dates.dateTo</th>
+                <th>employment.institution</th>
+                <th>employment.position</th>
+                <th>education.dates.dateFrom</th>
+                <th>education.dates.dateTo</th>
+                <th>education.institution</th>
+                <th>education.qualifications</th>
+                <th>address.dates.dateFrom</th>
+                <th>address.dates.dateTo</th>
+                <th>coordinates.latitude</th>
+                <th>coordinates.longitude</th>
+                <th>coordinates.addressNumber</th>
+                <th>coordinates.addressStreetName</th>
+                <th>coordinates.addressCity</th>
+                <th>coordinates.addressCounty</th>
+                <th>coordinates.addressPostcode</th>
+            </tr>
+            <tr ng-repeat="content in vm.content">
+                <td>{{ content.firstName }}</td>
+                <td>{{ content.middleNames }}</td>
+                <td>{{ content.surnames }}</td>
+                <td>{{ content.maidenName }}</td>
+                <td>{{ content.birth.date }}</td>
+                <td>{{ content.birth.institution }}</td>
+                <td>{{ content.death.date }}</td>
+                <td>{{ content.death.institution }}</td>
+                <td>{{ content.employment.dates.dateFrom }}</td>
+                <td>{{ content.employment.dates.dateTo }}</td>
+                <td>{{ content.employment.institution }}</td>
+                <td>{{ content.employment.position }}</td>
+                <td>{{ content.education.dates.dateFrom }}</td>
+                <td>{{ content.education.dates.dateTo }}</td>
+                <td>{{ content.education.institution }}</td>
+                <td>{{ content.education.qualifications }}</td>
+                <td>{{ content.address.dates.dateFrom }}</td>
+                <td>{{ content.address.dates.dateTo }}</td>
+                <td>{{ content.coordinates.latitude }}</td>
+                <td>{{ content.coordinates.longitude }}</td>
+                <td>{{ content.coordinates.addressNumber }}</td>
+                <td>{{ content.coordinates.addressStreetName }}</td>
+                <td>{{ content.coordinates.addressCity }}</td>
+                <td>{{ content.coordinates.addressCounty }}</td>
+                <td>{{ content.coordinates.addressPostcode }}</td>
+            </tr>
+        </table>
+	</body>
+    <script>
+        var clientContent = <%- JSON.stringify(serverContent) %>;
+    </script>
+    <script src="/assets/js/app.js"></script>
+</html>
