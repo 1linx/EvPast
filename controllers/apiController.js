@@ -40,6 +40,7 @@ module.exports = function(app) {
         
     app.post('/institutions', function(req, res) { 
            Institutions.create(req.body, function(err, results) {
+               console.log(req.body);               
                 if (err) throw err;    
                 Institutions.find(function(err, institutions) {
                     if (err) throw err;
@@ -76,6 +77,7 @@ module.exports = function(app) {
                 
     app.post('/persons', function(req, res) { 
            Persons.create(req.body, function(err, results) {
+               console.log(req.body);
                 if (err) throw err;    
                 Persons.find(function(err, persons) {
                     if (err) throw err;
@@ -85,9 +87,13 @@ module.exports = function(app) {
     });
     
         
-    app.get('/create/artefact', function(req, res) { 
-        res.render('create/Artefact');          
+    app.get('/create', function(req, res) { 
+        res.render('create/');          
     });    
+        
+    app.get('/create/artefact', function(req, res) { 
+        res.render('create/Artefact');
+    });       
         
     app.get('/create/location', function(req, res) { 
         res.render('create/Location');

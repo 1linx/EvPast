@@ -1,0 +1,65 @@
+<html ng-app="EvPast">
+	<head>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+       <title>Create Institution</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	</head>
+	<body ng-controller="MainController as vm">
+        <h4 class="col-md-4 col-md-offset-4">Create Institution</h4>
+        
+        <form method="POST" action="/institutions" class="col-md-4 col-md-offset-4">
+            <div class="form-group">
+                <label for="dateToInput">Date To</label>
+                <input type="date" class="form-control" id="dateToInput" placeholder="" name="dates.dateTo">
+            </div>
+            <div class="form-group">
+                <label for="dateFromInput">Date From</label>
+                <input type="date" class="form-control" id="dateFromInput" placeholder="" name="dates.dateFrom">
+            </div>
+            <div class="form-group">
+                <label for="latitudeInput">Latitude</label>
+                <input type="number" class="form-control" id="latitudeInput" placeholder="" name="coordinates.latitude">
+            </div>
+            <div class="form-group">
+                <label for="longitudeInput">Longitude</label>
+                <input type="number" class="form-control" id="longitudeInput" placeholder="" name="coordinates.longitudesubject">
+            </div>
+            <div class="form-group">
+                <label for="addressNumberInput">Address Number</label>
+                <input type="text" class="form-control" id="addressNumberInput" placeholder="" name="coordinates.addressNumber">
+            </div>
+            <div class="form-group">
+                <label for="addressStreetNameInput">Address Street Name</label>
+                <input type="text" class="form-control" id="addressStreetNameInput" placeholder="" name="coordinates.addressStreetName">
+            </div>
+            <div class="form-group">
+                <label for="addressCityInput">Address City</label>
+                <input type="text" class="form-control" id="addressCityInput" placeholder="" name="coordinates.addressCity">
+            </div>
+            <div class="form-group">
+                <label for="addressCountyInput">Address County</label>
+                <input type="date" class="form-control" id="addressCountyInput" placeholder="" name="coordinates.addressCounty">
+            </div>
+            <div class="form-group">
+                <label for="addressPostcodeInput">Address Postcode</label>
+                <input type="text" class="form-control" id="addressPostcodeInput" placeholder="" name="coordinates.addressPostcode">
+            </div>
+            <div class="form-group">
+                <label for="keyWordInput">Keyword</label>
+                <input type="text" class="form-control" id="keyWordInput" placeholder="" name="keyWords.keyWord">
+            </div>
+            <div class="form-group">
+                <label for="webSiteInput">Website</label>
+                <input type="text" class="form-control" id="webSiteInput" placeholder="" name="webSite.webSite">
+            </div>
+            <div class="form-group">
+                <label for="artefactInput">Artefact</label>
+                <input type="text" class="form-control" id="artefactInput" placeholder="" name="artefacts.artefact">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    
+	</body>
+    <script src="/assets/js/app.js"></script>
+</html>

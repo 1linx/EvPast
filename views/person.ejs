@@ -6,6 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 	</head>
 	<body ng-controller="MainController as vm">
+    <div class="table-responsive">
         <table class="table">
             <tr>
                 <th>firstName</th>
@@ -53,15 +54,16 @@
                 <td>{{ content.education.qualifications }}</td>
                 <td>{{ content.address.dates.dateFrom }}</td>
                 <td>{{ content.address.dates.dateTo }}</td>
-                <td>{{ content.coordinates.latitude }}</td>
-                <td>{{ content.coordinates.longitude }}</td>
-                <td>{{ content.coordinates.addressNumber }}</td>
-                <td>{{ content.coordinates.addressStreetName }}</td>
-                <td>{{ content.coordinates.addressCity }}</td>
-                <td>{{ content.coordinates.addressCounty }}</td>
-                <td>{{ content.coordinates.addressPostcode }}</td>
+                <td>{{ content.address.coordinates.latitude }}</td>
+                <td>{{ content.address.coordinates.longitude }}</td>
+                <td>{{ content.address.coordinates.addressNumber }}</td>
+                <td>{{ content.address.coordinates.addressStreetName }}</td>
+                <td>{{ content.address.coordinates.addressCity }}</td>
+                <td>{{ content.address.coordinates.addressCounty }}</td>
+                <td>{{ content.address.coordinates.addressPostcode }}</td>
             </tr>
         </table>
+        </div>
 	</body>
     <script>
         var clientContent = <%- JSON.stringify(serverContent) %>;

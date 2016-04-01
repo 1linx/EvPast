@@ -5,21 +5,45 @@
        <title>Artefacts</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 	</head>
-	<body ng-controller="MainController as vm">
+	<body ng-controller="MainController as vm">    
+    <div class="table-responsive">
         <table class="table">
             <tr>
                 <th>title</th>
                 <th>creator</th>
                 <th>subject</th>
                 <th>description</th>
+                <th>publisher</th>
+                <th>contributor</th>
+                <th>date</th>
+                <th>type</th>
+                <th>format</th>
+                <th>identifier</th>
+                <th>source</th>
+                <th>language</th>
+                <th>relation</th>
+                <th>coverage</th>
+                <th>rights</th>
             </tr>
             <tr ng-repeat="content in vm.content">
                 <td>{{ content.title }}</td>
                 <td>{{ content.creator }}</td>
                 <td>{{ content.subject }}</td>
                 <td>{{ content.description }}</td>
+                <td>{{ content.publisher }}</td>
+                <td>{{ content.contributor }}</td>
+                <td>{{ content.date }}</td>
+                <td>{{ content.type }}</td>
+                <td>{{ content.format }}</td>
+                <td>{{ content.identifier }}</td>
+                <td>{{ content.source }}</td>
+                <td>{{ content.language }}</td>
+                <td>{{ content.relation }}</td>
+                <td>{{ content.coverage }}</td>
+                <td>{{ content.rights }}</td>
             </tr>
         </table>
+        </div>
 	</body>
     <script>
         var clientContent = <%- JSON.stringify(serverContent) %>;

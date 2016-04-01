@@ -21,7 +21,7 @@ var institutionProfileSchema = new Schema({
     keyWords : {
         keyWord : String
     },
-    webSites : {
+    webSite : {
         webSite : String,
         
     },

@@ -13,19 +13,19 @@ module.exports = function(app) {
        //seed database
        var seedArtefacts = [
            {
-                title : "A dummy artefact",
+                title : "An artefact",
                 creator : "Test O'Testing",
                 subject : "Testing things",
                 description : "This is a description of a thing that is being tested."
            },
            {
-                title : "Another dummy artefact",
+                title : "Another artefact",
                 creator : "Tester Testerson",
                 subject : "A test of many things",
                 description : "What a day to be testing things."             
            },
            {
-                title : "More dummy artefacts",
+                title : "More artefacts",
                 creator : "T. E. Ster",
                 subject : "The fast testing of testable things",
                 description : "Prolonged sentence about the testing of things that are being tested, by me, the tester."   ,
@@ -40,35 +40,35 @@ module.exports = function(app) {
             coordinates : {
                 latitude : -47.15,
                 longitude : -126.71666666666667,
-                addressNumber : "1",
-                addressStreetName : "House of Cthulhu",
-                addressCity : "R'lyeh",
-                addressCounty : "South Pacific",
-                addressPostcode : "IA 1A"
+                addressNumber : "A number or name",
+                addressStreetName : "A street",
+                addressCity : "A city",
+                addressCounty : "A country",
+                addressPostcode : "P0 5T"
             },
             keyWords : {
-                keyWord : "F'tagn"
+                keyWord : "Word"
             },
             webSites : {
-                webSite : "http://www.chaosium.com",
+                webSite : "http://www.website.com",
                 
             },
             artefacts : {
-                artefact : "Necronomicon"
+                artefact : "an artefact"
             }
        };
        
        var seedLocationProfile = {
                 coordinates : {
-                latitude : -47.15,
-                longitude : -126.71666666666667,
-                addressNumber : "1",
-                addressStreetName : "House of Cthulhu",
-                addressCity : "R'lyeh",
-                addressCounty : "South Pacific",
-                addressPostcode : "IA 1A"
+                    latitude : -47.15,
+                    longitude : -126.71666666666667,
+                    addressNumber : "A number or name",
+                    addressStreetName : "A street",
+                    addressCity : "A city",
+                    addressCounty : "A country",
+                    addressPostcode : "P0 5T"
             },
-            name : "The Glebe",
+            name : "A name",
             otherNames : "14",
             dates : {
                 dateTo : new Date("October 13, 2014 11:13:00"),
@@ -79,16 +79,31 @@ module.exports = function(app) {
        
        var seedPersonProfile = {
             firstName : "Frank",
-            middleNames : "Eldritch",
+            middleNames : "E",
             surnames : "Pabodie",
             birth : {
                 date : new Date("April 20, 1947"),
-                institution : "Our lady in labour"
+                institution : "An institution"
             },
             death : {
                 date : new Date("February 14, 1967"),
-                institution : "St Mungo's"
-            }
+                institution : "Another institution"
+            },
+            address : {
+                dates : {
+                    dateFrom: new Date("February 14, 1917"),
+                    dateTo : new Date("February 14, 1967")
+                },
+                coordinates : {
+                    latitude : -47.15,
+                    longitude : -126.71666666666667,
+                    addressNumber : "A number or name",
+                    addressStreetName : "A street",
+                    addressCity : "A city",
+                    addressCounty : "A country",
+                    addressPostcode : "P0 5T"
+                }
+         }
        };
        
     

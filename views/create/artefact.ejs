@@ -2,7 +2,7 @@
 	<head>
        <!-- Latest compiled and minified CSS -->
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-       <title>Artefacts</title>
+       <title>Create Artefact</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 	</head>
 	<body ng-controller="MainController as vm">
@@ -36,6 +36,38 @@
             <div class="form-group">
                 <label for="dateInput">Date</label>
                 <input type="date" class="form-control" id="dateInput" placeholder="" name="date">
+            </div>
+            <div class="form-group">
+                <label for="typeInput">Type</label>
+                <input type="text" class="form-control" id="typeInput" placeholder="" name="type">
+            </div>
+            <div class="form-group">
+                <label for="formatInput">Format</label>
+                <input type="text" class="form-control" id="formatInput" placeholder="" name="format">
+            </div>
+            <div class="form-group">
+                <label for="identifierInput">Identifier</label>
+                <input type="text" class="form-control" id="identifierInput" placeholder="" name="identifier">
+            </div>
+            <div class="form-group">
+                <label for="sourceInput">Source</label>
+                <input type="text" class="form-control" id="sourceInput" placeholder="" name="source">
+            </div>
+            <div class="form-group">
+                <label for="languageInput">Language</label>
+                <input type="text" class="form-control" id="languageInput" placeholder="" name="language">
+            </div>
+            <div class="form-group">
+                <label for="relationInput">Relation</label>
+                <input type="text" class="form-control" id="relationInput" placeholder="" name="relation">
+            </div>
+            <div class="form-group">
+                <label for="coverageInput">Coverage</label>
+                <input type="text" class="form-control" id="coverageInput" placeholder="" name="coverage">
+            </div>
+            <div class="form-group">
+                <label for="rightsInput">Rights</label>
+                <input type="text" class="form-control" id="rightsInput" placeholder="" name="rights">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -6,6 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 	</head>
 	<body ng-controller="MainController as vm">
+    <div class="table-responsive">
         <table class="table">
             <tr>
                 <th>dates.dateTo</th>
@@ -36,6 +37,7 @@
                 <td>{{ content.artefacts.artefact }}</td>
             </tr>
         </table>
+        </div>
 	</body>
     <script>
         var clientContent = <%- JSON.stringify(serverContent) %>;
