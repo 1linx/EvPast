@@ -1,20 +1,193 @@
+<!DOCTYPE html>
 <html ng-app="TestApp">
-	<head>
-       <!-- Latest compiled and minified CSS -->
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-       <title>Everything Past</title>
-        
-    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-	</head>
+    <head>
+        <meta charset=utf-8 />
+        <title>Everything Past</title>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+        <link rel="stylesheet" type="text/css" href="assets/ep_style.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script type="text/javascript" src="assets/scripts/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="assets/scripts/tooltip.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <script type="text/javascript" src="assets/scripts/popover.js"></script>
+        <!--<script type="text/javascript" src="assets/scripts/js"></script>-->
+        <script>$(function () {
+        $('[data-toggle="popover"]').popover()
+        })
+        </script>
+    </head>
 	<body>
-        <div class="jumbotron">
-        <h1>Everything Past - SHOW</h1>
-        <a href="/artefacts" class="btn btn-primary btn-lg">Artefacts</a>
-        <a href="/institutions" class="btn btn-primary btn-lg">Institutions</a>
-        <a href="/locations" class="btn btn-primary btn-lg">Locations</a>
-        <a href="/persons" class="btn btn-primary btn-lg">Persons</a>
-        <a href="/create/" class="btn btn-lg">Create</a>
-        </div>
-	</body>
-    <script src="/assets/js/app.js"></script>
+
+  <!--NavBar-->
+  <nav class="navbar navbar-inverse navbar-static-top" id="nav">
+  
+    <a class="navbar-brand" a href="#" id="menu" type="button" class="btn btn-default navbar-btn">
+      <span class="glyphicon glyphicon-menu-hamburger"> EverythingPAST</span></a>
+  
+    <div class="navbar-header navbar-right">
+    <a href="#" type="button" class="btn btn-default navbar-btn" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="New file">
+      <span class="glyphicon glyphicon-file"></span></a>
+    
+    <a href="#" type="button" class="btn second-button btn-default navbar-btn" data-container="body" data-toggle="popover" data-trigger="focus"
+    data-placement="bottom" data-content="View my open files">
+      <span class="glyphicon glyphicon-folder-open"></span></a>
+    </div>
+
+  </nav>
+
+  <!-- SideBar -->
+            <div class="column col-lg-4 col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar" style="background-color: #222222;">
+                <ul class="nav">
+                  <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+                </ul>
+                <h5>Search</h5>
+            <form class="navbar-form navbar" role="search">
+                <div class="form-horizontal">
+                  <input name="search" id="search"/>
+                  <button class="btn btn-sm btn-inverse">Search</button>
+                  <hr>
+                </div>
+            </form>            
+                <ul class="nav hidden-xs" id="lg-menu">
+                  <h5>Results</h5>
+                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-volume-up"></i> Audio</a></li>
+                    <li><a href="#stories"><i class="glyphicon glyphicon-film"></i> Movie</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Unknown</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-file"></i> Document</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i> Person</a></li>
+                    <li><div id='listings' class='listings'></div></li>                    
+                  <hr>
+                  <h5>Sources</h5>
+                  
+                  <li class="active"><a href="#featured"><i class="glyphicon glyphicon-hdd"></i> Map Library</a></li>
+                    <li><a href="#stories"><i class="glyphicon glyphicon-hdd"></i> National Archives</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-hdd"></i> Post Office</a></li>   
+                </ul>
+                <p>test</p>
+                <!-- tiny only nav -->
+              <ul class="nav visible-xs" id="xs-menu">
+                    <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+                    <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-home"></i></a></li>
+                </ul>
+              
+            </div>
+ 
+  <div id='map' class='map'></div>
+
+  <script>
+  L.mapbox.accessToken = 'pk.eyJ1IjoiZmVyZ3VzYWxleGFuZGVyIiwiYSI6ImNpZzdyMHBmcDA3bmV1eGx4bnR5cXoxdjEifQ.eB3E0Qpjhq-v5dYHk2Uzwg';
+  var geojson = [
+      {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -3.213397,
+                55.949831
+              ]
+            },
+            "properties": {
+              "phoneFormatted": "(202) 234-7336",
+              "phone": "2022347336",
+              "address": "Joe Blogs",
+              "city": "Edinburgh",
+              "country": "United United Kingdom",
+            }
+          },  
+        ]
+      }
+  ];
+  var map = L.mapbox.map('map', 'mapbox.k8xv42t9')
+  .setView([55.933730, -3.199411], 16);
+
+  map.scrollWheelZoom.disable();
+
+  var listings = document.getElementById('listings');
+  var locations = L.mapbox.featureLayer().addTo(map);
+
+  locations.setGeoJSON(geojson);
+
+  function setActive(el) {
+    var siblings = listings.getElementsByTagName('div');
+    for (var i = 0; i < siblings.length; i++) {
+      siblings[i].className = siblings[i].className
+      .replace(/active/, '').replace(/\s\s*$/, '');
+    }
+
+    el.className += ' active';
+  }
+
+  locations.eachLayer(function(locale) {
+
+    // Shorten locale.feature.properties to just `prop` so we're not
+    // writing this long form over and over again.
+    var prop = locale.feature.properties;
+
+    // Each marker on the map.
+    var popup = '<h3>Result</h3><div>' + prop.address;
+
+    var listing = listings.appendChild(document.createElement('div'));
+    listing.className = 'item';
+
+    var link = listing.appendChild(document.createElement('a'));
+    link.href = '#';
+    link.className = 'title';
+
+    link.innerHTML = prop.address;
+    if (prop.crossStreet) {
+      link.innerHTML += '<br /><small class="quiet">' + prop.crossStreet + '</small>';
+      popup += '<br /><small class="quiet">' + prop.crossStreet + '</small>';
+    }
+
+    var details = listing.appendChild(document.createElement('div'));
+    details.innerHTML = prop.city;
+    if (prop.phone) {
+      details.innerHTML += ' &middot; ' + prop.phoneFormatted;
+    }
+
+    link.onclick = function() {
+      setActive(listing);
+
+      // When a menu item is clicked, animate the map to center
+      // its associated locale and open its popup.
+      map.setView(locale.getLatLng(), 16);
+      locale.openPopup();
+      return false;
+    };
+
+    // Marker interaction
+    locale.on('click', function(e) {
+      // 1. center the map on the selected marker.
+      map.panTo(locale.getLatLng());
+
+      // 2. Set active the markers associated listing.
+      setActive(listing);
+    });
+
+    popup += '</div>';
+    locale.bindPopup(popup);
+
+    locale.setIcon(L.icon({
+      iconUrl: 'assets/images/house3.png',
+      iconSize: [56, 56],
+      iconAnchor: [28, 28],
+      popupAnchor: [0, -34]
+    }));
+
+});
+
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
+</script>
+
+</body>
 </html>
