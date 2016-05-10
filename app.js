@@ -8,7 +8,6 @@ var apiController = require('./controllers/apiController');
 var database = "EvPast";
 
 var port = process.env.PORT || 3000;
-// var port = 1337;
 
 app.use('/assets', express.static(__dirname + '/public'));
 
