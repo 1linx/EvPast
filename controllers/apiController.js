@@ -16,7 +16,7 @@ module.exports = function(app) {
     app.get('/artefacts', function(req, res) { 
             Artefacts.find(function(err, artefacts) {
                 if (err) throw err;
-                res.render('Artefact', { serverContent : artefacts });
+                res.render('artefact', { serverContent : artefacts });
             });        
     });
     
@@ -25,7 +25,7 @@ module.exports = function(app) {
                 if (err) throw err;    
                 Artefacts.find(function(err, artefacts) {
                     if (err) throw err;
-                    res.render('Artefact', { serverContent : artefacts });
+                    res.render('artefact', { serverContent : artefacts });
                 });                         
             });       
     });
@@ -33,7 +33,7 @@ module.exports = function(app) {
     app.get('/institutions', function(req, res) { 
             Institutions.find(function(err, institutions) {
                 if (err) throw err;
-                res.render('Institution', { serverContent : institutions });
+                res.render('institution', { serverContent : institutions });
             });        
     });
     
@@ -44,7 +44,7 @@ module.exports = function(app) {
                 if (err) throw err;    
                 Institutions.find(function(err, institutions) {
                     if (err) throw err;
-                    res.render('Institution', { serverContent : institutions });
+                    res.render('institution', { serverContent : institutions });
                 });                         
             });       
     });
@@ -52,7 +52,7 @@ module.exports = function(app) {
     app.get('/locations', function(req, res) { 
             Locations.find(function(err, locations) {
                 if (err) throw err;
-                res.render('Location', { serverContent : locations });
+                res.render('location', { serverContent : locations });
             });        
     });
             
@@ -61,7 +61,7 @@ module.exports = function(app) {
                 if (err) throw err;    
                 Locations.find(function(err, locations) {
                     if (err) throw err;
-                    res.render('Location', { serverContent : locations });
+                    res.render('location', { serverContent : locations });
                 });                         
             });       
     });
@@ -70,7 +70,7 @@ module.exports = function(app) {
             Persons.find(function(err, persons) {
                 if (err) throw err;
                 // console.log(persons);
-                res.render('Person', { serverContent : persons });
+                res.render('person', { serverContent : persons });
             });        
     });
     
@@ -81,7 +81,7 @@ module.exports = function(app) {
                 if (err) throw err;    
                 Persons.find(function(err, persons) {
                     if (err) throw err;
-                    res.render('Person', { serverContent : persons });
+                    res.render('person', { serverContent : persons });
                 });                         
             });       
     });
@@ -92,19 +92,19 @@ module.exports = function(app) {
     });    
         
     app.get('/create/artefact', function(req, res) { 
-        res.render('create/Artefact');
+        res.render('create/artefact');
     });       
         
     app.get('/create/location', function(req, res) { 
-        res.render('create/Location');
+        res.render('create/location');
     });       
         
     app.get('/create/institution', function(req, res) { 
-        res.render('create/Institution');
+        res.render('create/institution');
     });        
         
     app.get('/create/person', function(req, res) { 
-        res.render('create/Person');
+        res.render('create/person');
     });    
       
 };
