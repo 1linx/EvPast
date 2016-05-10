@@ -16,7 +16,7 @@ module.exports = function(app) {
     app.get('/artefacts', function(req, res) { 
             Artefacts.find(function(err, artefacts) {
                 if (err) throw err;
-                res.render('artefact', { serverContent : artefacts });
+                res.render('Artefact', { serverContent : artefacts });
             });        
     });
     
@@ -25,7 +25,7 @@ module.exports = function(app) {
                 if (err) throw err;    
                 Artefacts.find(function(err, artefacts) {
                     if (err) throw err;
-                    res.render('artefact', { serverContent : artefacts });
+                    res.render('Artefact', { serverContent : artefacts });
                 });                         
             });       
     });

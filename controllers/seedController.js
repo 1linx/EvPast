@@ -16,7 +16,7 @@ module.exports = function(app) {
                 title : "An artefact",
                 creator : "Test O'Testing",
                 subject : "Testing things",
-                description : "This is a description of a thing that is being tested."
+                description : "This is a description of a thing that is being tested now."
            },
            {
                 title : "Another artefact",
