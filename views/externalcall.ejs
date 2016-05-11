@@ -1,0 +1,20 @@
+<html>
+	<head>
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+       <title>External Call</title>
+        <script type="text/javascript" src="assets/scripts/jquery-2.2.3.min.js"></script>
+	</head>
+	<body>    
+    
+	</body>
+    <script>
+
+            $.ajax({
+            url: "http://www.capitalcollections.org.uk/api/v1/items/24412",
+            method: 'GET'
+            }).then(function(data) {
+            console.log(data);
+            });
+    </script>
+</html>

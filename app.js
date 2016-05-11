@@ -5,6 +5,8 @@ var mongoose = require('mongoose');
 var seedController = require('./controllers/seedController');
 var apiController = require('./controllers/apiController');
 
+var externalApiController = require('./controllers/externalApiController');
+
 var database = "EvPast";
 
 var port = process.env.PORT || 3000;
@@ -18,6 +20,7 @@ mongoose.connect('mongodb://localhost:27017/' + database);
 
 seedController(app);
 apiController(app);
+externalApiController(app);
 
 console.log("Running...");
 console.log(process.env.PORT || "3000");
