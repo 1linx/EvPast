@@ -135,3 +135,18 @@ body {
     padding:10px;
   }
   .leaflet-container .leaflet-marker-icon { cursor:pointer; }
+  
+  .category_popup {
+    width: 44em; 
+    height: 44em;
+    overflow: scroll;
+  }
+  
+  .resultsCounters{
+    float: right;
+    color: #00853e;
+  }
+  
+  .invisible { 
+    display: none; 
+    }

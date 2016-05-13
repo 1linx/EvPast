@@ -10,13 +10,23 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <script type="text/javascript" src="assets/scripts/jquery-2.2.3.min.js"></script>
+        <script  src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="assets/scripts/tooltip.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
         <script type="text/javascript" src="assets/scripts/popover.js"></script>
+        <script type="text/javascript" src="assets/scripts/main.js"></script>
+        <!-- jQuery Popup Overlay -->
+        <script src="assets/scripts/jquery.popupoverlay.js"></script>
         <!--<script type="text/javascript" src="assets/scripts/js"></script>-->
         <script>$(function () {
-        $('[data-toggle="popover"]').popover()
-        })
+          $('[data-toggle="popover"]').popover()
+          $('#category_unknown_popup').popup();
+          // $( "#accordion" ).accordion({
+          //   collapsible: true, 
+          //   autoHeight: false, 
+          //   active: false 
+          // });          
+        });
         </script>
     </head>
 	<body>
@@ -44,18 +54,18 @@
                   <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
                 </ul>
                 <h5>Search</h5>
-            <form class="navbar-form navbar" role="search">
-                <div class="form-horizontal">
-                  <input name="search" id="search"/>
-                  <button class="btn btn-sm btn-inverse">Search</button>
-                  <hr>
+               
+                <div class="form-horizontal">            
+                  <input name="search" id="searchbox" type="search" placeholder="Enter search terms">    
+                  <button id="searchBtn" class="btn btn-sm btn-inverse">Search</button>   
                 </div>
-            </form>            
-                <ul class="nav hidden-xs" id="lg-menu">
-                  <h5>Results</h5>
+                <hr />
+                
+                <ul id="searchResults" class="nav hidden-xs invisible" id="lg-menu">
+                  <h5 >Results</h5>
                     <li class="active"><a href="#featured"><i class="glyphicon glyphicon-volume-up"></i> Audio</a></li>
-                    <li><a href="#stories"><i class="glyphicon glyphicon-film"></i> Movie</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Unknown</a></li>
+                    <li><a href="#stories" class="category_movie_popup_open"><i class="glyphicon glyphicon-film"></i> Movie</a></li>
+                    <li><a href="#" id="category_unknown"><i class="glyphicon glyphicon-exclamation-sign"></i> Unknown<span id="unknownResultsCounters" class="resultsCounters"></span></a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-file"></i> Document</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-user"></i> Person</a></li>
                     <li><div id='listings' class='listings'></div></li>                    
@@ -66,19 +76,23 @@
                     <li><a href="#stories"><i class="glyphicon glyphicon-hdd"></i> National Archives</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-hdd"></i> Post Office</a></li>   
                 </ul>
-                <p>test</p>
                 <!-- tiny only nav -->
               <ul class="nav visible-xs" id="xs-menu">
                     <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
                     <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
                     <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
                     <li><a href="#" class="text-center"><i class="glyphicon glyphicon-home"></i></a></li>
-                </ul>
-              
+                </ul>     
             </div>
  
   <div id='map' class='map'></div>
-
+  
+  <!--<div id="category_audio_popup" class="well category_popup"></div>-->
+  <!--<div id="category_movie_popup" class="well category_popup"></div>-->
+  <div id="category_unknown_popup" class="well category_popup"></div>
+  <!--<div id="category_document_popup" class="well category_popup"></div>
+  <div id="category_person_popup" class="well category_popup"></div>-->
+  
   <script>
   L.mapbox.accessToken = 'pk.eyJ1IjoiZmVyZ3VzYWxleGFuZGVyIiwiYSI6ImNpZzdyMHBmcDA3bmV1eGx4bnR5cXoxdjEifQ.eB3E0Qpjhq-v5dYHk2Uzwg';
   var geojson = [

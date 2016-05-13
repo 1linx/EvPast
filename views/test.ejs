@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="TestApp">
+    <head>
+        <meta charset=utf-8 />
+        <title>Everything Past</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+        <script>
+            $(function() {
+                $( "#accordion" ).accordion();
+            });
+  </script>
+    </head>
+    
+	<body>
+        <input id="searchbox" type="search" placeholder="Search!">    
+        <button id="searchBtn">Search!</button>
+    
+        <div id="results">Results</div>
+    
+    <!-- Add an optional button to open the popup -->
+  <button class="a_popup_open">Open popup</button>
+  <button class="b_popup_open">Open popup</button>
+
+  <!-- Add content to the popup -->
+  <div id="a_popup" class="well" style="width: 44em; height 44em;">
+
+    ...popup content...
+
+    <!-- Add an optional button to close the popup -->
+    <!--<button class="my_popup_close">Close</button>-->
+
+  </div>
+  
+  
+  <div id="b_popup" class="well" style="width: 44em; height 44em;">HELLO</div>
+  
+  <div id="accordion">
+  <h3>Section 1</h3>
+  <div>
+    <p>
+        <img src="http://www.capitalcollections.org.uk/media.php?i=24412&amp;t=0&amp;p=-1&amp;dg=880353ce363db1840845c18010faa6cafbf7001e&amp;signature=7W5KAO80Au8QGC-TtEwleKRcKWfg5RTNETk_UL5BLFk" width="120" height="86" missing="false"/>
+    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+    </p>
+  </div>
+  <h3>Section 2</h3>
+  <div>
+    <p>
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+    </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+    </p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+  <h3>Section 4</h3>
+  <div>
+    <p>
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.
+    </p>
+    <p>
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    </p>
+  </div>
+</div>
+  
+    <script type="text/javascript" src="assets/scripts/main.js"></script>
+    <!-- jQuery Popup Overlay -->
+    <script src="assets/scripts/jquery.popupoverlay.js"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      // Initialize the plugin
+      $('#a_popup').popup();
+      $('#b_popup').popup();
+
+    });
+  </script>
+    </body>
+</html>

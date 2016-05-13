@@ -161,6 +161,7 @@ module.exports = function(app) {
             });
             callback(null, 'Person collection cleared');
         },
+        
         // this could be better handled array parse by client-side
         function(callback){
             setTimeout(function() { 

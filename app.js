@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-// var setupController = require('./controllers/setupController');
+
 var seedController = require('./controllers/seedController');
 var apiController = require('./controllers/apiController');
 
-var externalApiController = require('./controllers/externalApiController');
+var capitalCollections = require('./externalApiControllers/capitalCollections');
 
 var database = "EvPast";
 
@@ -20,13 +20,17 @@ mongoose.connect('mongodb://localhost:27017/' + database);
 
 seedController(app);
 apiController(app);
-externalApiController(app);
 
-console.log("Running...");
+app.use('/capitalCollectionsCall', capitalCollections);
+app.get('/test', function(req, res) {res.render('test')});
+
+
+
+
+console.log("Running on port:");
 console.log(process.env.PORT || "3000");
 
 
 var institutionProfile = require('./models/institutionProfileModel');
-
 
 app.listen(port);
