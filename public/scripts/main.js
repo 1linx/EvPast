@@ -22,19 +22,23 @@ $(function(){
        console.log("searched for: " + searchParameters.search);
        
        // begin internal Mongo search
+       var mongoData = [];
        $.post('/search', searchParameters)
        .done(function(data) {
          if (data.length < 1) {           
          console.warn("No data matches your search.")
          } else {
             console.log(data);
+            mongoData = data;
          }                  
        })
        .fail(function() {
          console.warn("Search failed.")
        });
          
-       
+       mongoData.each(function() { 
+         
+       });
        
 //        // begin Capital Collections search
 //        $.get( '/capitalCollectionsCall', searchParameters, function(data) {
