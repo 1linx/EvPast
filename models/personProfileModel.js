@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var personProfileSchema = new Schema({
-    firstName : String,
+    firstName : {type: String, index: true},
     middleNames : String,
     surnames : String,
     maidenName : String,

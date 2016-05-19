@@ -37,9 +37,9 @@ body {
     position:absolute;
     width:25%;
     height:100%;
-    /*top:80;*/
+    /*top:80px;*/
     left:0;
-    overflow:hidden;
+    overflow:scroll;
     border-right:1px solid rgba(0,0,0,0.25);
   }
   .pad2 {
