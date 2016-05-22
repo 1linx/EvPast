@@ -132,7 +132,7 @@ module.exports = function(app, url) {
                     
         });
        
-      res.send("Erm.... done?");
+      res.redirect("./");
   
 });
 };
