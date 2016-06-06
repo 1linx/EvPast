@@ -20,22 +20,19 @@
         <!--<script type="text/javascript" src="assets/scripts/js"></script>-->
         <script>$(function () {
           $('[data-toggle="popover"]').popover()
-          $('#category_unknown_popup').popup();
-          // $( "#accordion" ).accordion({
-          //   collapsible: true, 
-          //   autoHeight: false, 
-          //   active: false 
-          // });          
+          $('#category_capitalCollections_popup').popup(); 
         });
         </script>
     </head>
-	<body>
+<body>
+
+<div id="myDiv"><img src="assets/images/ep_logo_onload.png" style='height: 100%; width: 100%;'></div>
+<script>$("#myDiv").delay(2000).fadeOut("slow");</script>
 
   <!--NavBar-->
   <nav class="navbar navbar-inverse navbar-static-top" id="nav">
-  
     <a class="navbar-brand" a href="#" id="menu" type="button" class="btn btn-default navbar-btn">
-      <span class="glyphicon glyphicon-menu-hamburger"> EverythingPAST</span></a>
+       <h5>EVERYTHING PAST</h5></a>
   
     <div class="navbar-header navbar-right">
     <a href="#" type="button" class="btn btn-default navbar-btn" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="New file">
@@ -45,56 +42,111 @@
     data-placement="bottom" data-content="View my open files">
       <span class="glyphicon glyphicon-folder-open"></span></a>
     </div>
-
   </nav>
 
   <!-- SideBar -->
-            <div class="column col-lg-4 col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar" style="background-color: #222222;">
+            <div class="column col-lg-4 col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                   <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
                 </ul>
-                <h5>Search</h5>
+             <h5>Search</h5>
                
                 <div class="form-horizontal">            
                   <input name="search" id="searchbox" type="search" placeholder="Enter search terms">    
                   <button id="searchBtn" class="btn btn-sm btn-inverse">Search</button>   
                 </div>
-                <hr />
                 
-                <!-- remove 'invisible' class to make menu items visible from start-->
-                <ul id="searchResults" class="nav hidden-xs invisible" id="lg-menu">
-                  <h5 >Results</h5>
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-volume-up"></i> Audio</a></li>
-                    <li><a href="#stories" class="category_movie_popup_open"><i class="glyphicon glyphicon-film"></i> Movie</a></li>
-                    <li><a href="#" id="category_unknown"><i class="glyphicon glyphicon-exclamation-sign"></i> Unknown<span id="unknownResultsCounters" class="resultsCounters"></span></a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-file"></i> Document</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-user"></i> Person</a></li>
-                    <li><div id='listings' class='listings'></div></li>                    
-                  <hr>
-                  <h5>Sources</h5>
-                  
-                  <li class="active"><a href="#featured"><i class="glyphicon glyphicon-hdd"></i> Map Library</a></li>
-                    <li><a href="#stories"><i class="glyphicon glyphicon-hdd"></i> National Archives</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-hdd"></i> Post Office</a></li>   
-                </ul>
-                <!-- tiny only nav -->
-              <ul class="nav visible-xs" id="xs-menu">
-                    <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
-                    <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
-                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
-                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-home"></i></a></li>
-                </ul>     
-                
-            <div id="testDiv"></div>
+            <h5>Results</h5>
+            <!-- Accordion http://www.bootply.com/uBoT3zP1P2 -->
+            <div id="MainMenu">
+  <div class="list-group panel">
+    <a href="#demo3" class="list-group-item list-group-item-success" id="accordion" data-toggle="collapse" data-parent="#MainMenu"><i class="glyphicon glyphicon-volume-up"></i> Audio</a>
+    <div class="collapse" id="demo3">
+      <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">Subitem 1 <i class="fa fa-caret-down"></i></a>
+      <div class="collapse list-group-submenu" id="SubMenu1">
+        <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
+        <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a>
+        <a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1">Subitem 3 c <i class="fa fa-caret-down"></i></a>
+        <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
+          <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 1</a>
+          <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 2</a>
+        </div>
+        <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 4 d</a>
+      </div>
+      <a href="javascript:;" class="list-group-item">Subitem 2</a>
+      <a href="javascript:;" class="list-group-item">Subitem 3</a>
+    </div>
+    <a href="#demo4" class="list-group-item list-group-item-success" id="accordion" data-toggle="collapse" data-parent="#MainMenu">
+      <i class="glyphicon glyphicon-film"></i> Movie</a>
+    <div class="collapse" id="demo4">
+      <a href="" class="list-group-item">Subitem 1</a>
+      <a href="" class="list-group-item">Subitem 2</a>
+      <a href="" class="list-group-item">Subitem 3</a>
+    </div>
+    <a href="#demo5" class="list-group-item list-group-item-success" id="accordion" data-toggle="collapse" data-parent="#MainMenu">
+      <i class="glyphicon glyphicon-exclamation-sign"></i> Unknown</a>
+    <div class="collapse" id="demo5">
+      <a href="" class="list-group-item">Subitem 1</a>
+      <a href="" class="list-group-item">Subitem 2</a>
+      <a href="" class="list-group-item">Subitem 3</a>
+    </div>
+    <a href="#demo6" class="list-group-item list-group-item-success" id="accordion" data-toggle="collapse" data-parent="#MainMenu">
+      <i class="glyphicon glyphicon-file"></i> Document</a>
+    <div class="collapse" id="demo6">
+      <a href="" class="list-group-item">Subitem 1</a>
+      <a href="" class="list-group-item">Subitem 2</a>
+      <a href="" class="list-group-item">Subitem 3</a>
+    </div>
+    <a href="#demo7" class="list-group-item list-group-item-success" id="accordion" data-toggle="collapse" data-parent="#MainMenu">
+      <i class="glyphicon glyphicon-user"></i> Person</a>
+    <div class="collapse" id="demo7">
+      <a href="" class="list-group-item"><li><div id='listings' class='listings'></div></li></a>
+    </div>
+
+  </div>
+</div>
+            <!-- End Accordion  -->
+            <!-- Sources -->
+            <h5>Sources</h5>
+            <div id="MainMenu">
+            <div class="list-group panel">
+    <a href="#demo8" class="list-group-item list-group-item-success" id="accordion" data-toggle="collapse" data-parent="#MainMenu">
+      <i class="glyphicon glyphicon-hdd"></i> Capital Collections<span id="capitalCollectionsResultsCounters" class="resultsCounters"></span></a>
+    <div class="collapse" id="demo8">
+      <a href="" id="capital_collections_results" class="list-group-item">Subitem 1</a>
+    </div>
+    <a href="#demo9" class="list-group-item list-group-item-success" id="accordion" data-toggle="collapse" data-parent="#MainMenu">
+      <i class="glyphicon glyphicon-hdd"></i> Post Office Archives</a>
+    <div class="collapse" id="demo9">
+      <a href="" class="list-group-item">Subitem 1</a>
+    </div>
+    <a href="#demo10" class="list-group-item list-group-item-success" id="accordion" data-toggle="collapse" data-parent="#MainMenu">
+      <i class="glyphicon glyphicon-hdd"></i> National Archives</a>
+    <div class="collapse" id="demo10">
+      <a href="" class="list-group-item">Subitem 1</a>
+    </div>
             </div>
- 
+            </div>
+                <!-- End Sources -->
+                <!-- Slider Control -->
+<form method="post" action="demoform.asp">
+  <label for="points"><h5>Date Range</h5></label>
+  <input type="range" name="points" id="points" value="1960" min="1920" max="2016">
+</form>  
+<!-- End Slider -->       
+            </div> 
+<!-- End SideBar -->
+<!-- Map -->
   <div id='map' class='map'></div>
+<!-- End Map -->
+ 
   
   <!--<div id="category_audio_popup" class="well category_popup"></div>-->
   <!--<div id="category_movie_popup" class="well category_popup"></div>-->
-  <div id="category_unknown_popup" class="well category_popup"></div>
+  <div id="category_capitalCollections_popup" class="well category_popup"></div>
   <!--<div id="category_document_popup" class="well category_popup"></div>
   <div id="category_person_popup" class="well category_popup"></div>-->
+  
   
   <script>
   L.mapbox.accessToken = 'pk.eyJ1IjoiZmVyZ3VzYWxleGFuZGVyIiwiYSI6ImNpZzdyMHBmcDA3bmV1eGx4bnR5cXoxdjEifQ.eB3E0Qpjhq-v5dYHk2Uzwg';
@@ -119,13 +171,31 @@
               "country": "United United Kingdom",
             }
           },  
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -3.1999,
+                55.9486
+              ]
+            },
+            "properties": {
+              "phoneFormatted": "(202) 234-7336",
+              "phone": "2022347336",
+              "address": "John Smith",
+              "city": "Edinburgh",
+              "country": "United United Kingdom",
+            }
+          }
         ]
       }
   ];
-  var map = L.mapbox.map('map', 'mapbox.k8xv42t9')
+  var map = L.mapbox.map('map', 'mapbox.k8xv42t9',{ zoomControl: false })
   .setView([55.933730, -3.199411], 16);
 
   map.scrollWheelZoom.disable();
+  new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
   var listings = document.getElementById('listings');
   var locations = L.mapbox.featureLayer().addTo(map);

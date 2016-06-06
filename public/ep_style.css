@@ -25,22 +25,60 @@ body {
   }
   a:hover { color:#101010; }
 
+/*  Accordion Stuff */
+
+#accordion {
+  background-color: #222222;
+  color: #fff;
+  margin: 0;
+  border: none;
+}
+
+#accordion:hover {
+  background-color: #337ab7;
+}
+
+.list-group.panel {
+  border:none;
+}
+
+.list-group-item {
+}
+
+.list-group-submenu {
+  margin-left:20px;
+}
+
+.list-group-item-success {
+  background-color: #333;
+}
+
+.list-group-submenu {
+}
+
+/*End Accordion Stuff*/
+
   .navbar-right {
     padding-right:30px;
+    background: rgba(0,0,0,0.9);
+
   }
 
   #nav {
     margin-bottom: 0px;
+    background: rgba(0,0,0,0.9);
+    border:none;
+
   }
 
   #sidebar {
     position:absolute;
     width:25%;
     height:100%;
-    /*top:80px;*/
+    top:80;
     left:0;
-    overflow:scroll;
-    border-right:1px solid rgba(0,0,0,0.25);
+    overflow:hidden;
+    background: rgba(0,0,0,0.9);
   }
   .pad2 {
     padding:20px;
@@ -50,10 +88,12 @@ body {
   }
   .map {
     position:absolute;
-    left:25%;
-    width:75%;
-    top:0;bottom:0;
+    width:100%;
+    height:100%;
+    top:0;
+    bottom:0;
     margin-top: 50px;
+    z-index: -1;
   }
   .heading {
     background:#fff;
@@ -135,6 +175,15 @@ body {
     padding:10px;
   }
   .leaflet-container .leaflet-marker-icon { cursor:pointer; }
+
+  #myDiv {
+  position: fixed; /* or absolute */
+  width: 100%;
+  top: -15px;
+  }
+
+
+/* Styles that Al has implemented: */
   
   .category_popup {
     width: 44em; 
